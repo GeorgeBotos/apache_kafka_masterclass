@@ -1,0 +1,6 @@
+
+(1) produce message
+kafka-console-producer.sh --bootstrap-server localhost:9092 --topic hello-world
+
+(2) produce message quickly (batching messages only after 50ms)
+kafka-console-producer.sh --bootstrap-server localhost:9092 --topic hello-world --timeout 50
