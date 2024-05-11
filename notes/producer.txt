@@ -4,3 +4,7 @@ kafka-console-producer.sh --bootstrap-server localhost:9092 --topic hello-world
 
 (2) produce message quickly (batching messages only after 50ms)
 kafka-console-producer.sh --bootstrap-server localhost:9092 --topic hello-world --timeout 50
+
+(3) producer batching properties
+  - linger.ms 1000  -> how long to wait for batching
+  - batch.size (bytes) -> what size of batch to send    => These two are exclusive properties

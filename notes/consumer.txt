@@ -2,5 +2,8 @@
 (1) consume message
 kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic hello-world
 
-(1) consume message from beginning
+(2) consume message from beginning
 kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic hello-world --from-beginning
+
+(3) consumer pulling rate property
+  - max.poll.records  ->  how many messages is delivered at a single pull request (default is 500)

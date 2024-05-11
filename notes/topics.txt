@@ -10,3 +10,8 @@ kafka-topics.sh --bootstrap-server localhost:9092 --topic order-events --describ
 
 (4) delete topic
 kafka-topics.sh --bootstrap-server localhost:9092 --topic order-events --delete
+
+(5) message retention properties (server.properties)
+  - log.retention.hours=168
+  - log.retention.bytes=1073741824
+  - log.retention.check.intervals.ms=300000
