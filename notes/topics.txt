@@ -1,15 +1,22 @@
 
 (1) create topic
-kafka-topics.sh --bootstrap-server localhost:9092 --topic hello-world --create
+kafka-topics.sh --bootstrap-server localhost:9092
+                --topic hello-world
+                --create
 
 (2) list topics
-kafka-topics.sh --bootstrap-server localhost:9092 --list
+kafka-topics.sh --bootstrap-server localhost:9092
+                --list
 
 (3) describe topic
-kafka-topics.sh --bootstrap-server localhost:9092 --topic order-events --describe
+kafka-topics.sh --bootstrap-server localhost:9092
+                --topic order-events
+                --describe
 
 (4) delete topic
-kafka-topics.sh --bootstrap-server localhost:9092 --topic order-events --delete
+kafka-topics.sh --bootstrap-server localhost:9092
+                --topic order-events
+                --delete
 
 (5) message retention properties (server.properties)
   - log.retention.hours=168

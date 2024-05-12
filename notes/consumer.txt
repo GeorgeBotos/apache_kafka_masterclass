@@ -1,9 +1,51 @@
 
 (1) consume message
-kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic hello-world
+kafka-console-consumer.sh --bootstrap-server localhost:9092
+                          --topic hello-world
 
 (2) consume message from beginning
-kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic hello-world --from-beginning
+kafka-console-consumer.sh --bootstrap-server localhost:9092
+                          --topic hello-world
+                          --from-beginning
 
 (3) consumer pulling rate property
   - max.poll.records  ->  how many messages is delivered at a single pull request (default is 500)
+
+(4) consume messages with offset and timestamp printed out
+kafka-console-consumer.sh --bootstrap-server localhost:9092
+                          --topic hello-world
+                          --property print.offset=true
+                          --property print.timestamp=true
+
+(5) consume message from a consumer group
+kafka-console-consumer.sh --bootstrap-server localhost:9092
+                          --topic hello-world
+                          --property print.offset=true
+                          --group nameOfGroup
+
+(6) print consumer groups
+kafka-consumer-groups.sh --bootstrap-server localhost:9092
+                         --list
+
+(7) consume messages with offset and key printed out
+kafka-console-consumer.sh --bootstrap-server localhost:9092
+                          --topic hello-world
+                          --property print.offset=true
+                          --property print.key=true
+
+(8) describe consumer group
+kafka-consumer-groups.sh --bootstrap-server localhost:9092
+                         --group first-group
+                         --describe
+
+(9) reset offset
+kafka-consumer-groups.sh --bootstrap-server localhost:9092
+                         --group first-group
+                         --topic hello-world
+                         --reset-offsets
+                         --shift-by -3                          => moves back 3 messages
+                    or   --by-duration PT5M                     => moves back messages by 5 minutes
+                    or   --to-datetime 2023-01-01T00:00:00:000  => moves back messages to the given datetime
+                    or   --to-earliest                          => moves back to the very beginning
+                    or   --to-latest                            => moves back to the end
+                         --execute

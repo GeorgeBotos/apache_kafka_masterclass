@@ -1,0 +1,9 @@
+
+Message Attributes
+
+Key                 => nullable
+Value               => nullable
+Timestamp
+Partition & Offset  => The offset is of the partition
+Headers             => Key/Value pairs. Like HTTP headers, to provide additional metadata
+Compression Type    => none / gzip / snappy / lz4 / zstd
